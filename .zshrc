@@ -1,5 +1,6 @@
 source $ZSH/oh-my-zsh.sh
 
+export EDITOR=nvim
 export DOTNET_ROOT="/usr/local/share/dotnet"
 # nodenv
 eval "$(nodenv init -)"
