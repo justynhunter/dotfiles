@@ -129,8 +129,9 @@ return {
             cmp.setup({
                 sources = {
                     { name = "path" },
-                    { name = "nvim_lsp", keyword_length = 1 },
-                    { name = "buffer",   keyword_length = 3 },
+                    { name = "nvim_lsp",  keyword_length = 1 },
+                    { name = "buffer",    keyword_length = 3 },
+                    { name = "supermaven" },
                 },
                 window = {
                     documentation = cmp.config.window.bordered(),
@@ -144,6 +145,7 @@ return {
                             luasnip = '⋗',
                             buffer = 'Ω',
                             path = '🖫',
+                            supermaven = '⚡',
                         }
 
                         item.menu = menu_icon[entry.source.name]
