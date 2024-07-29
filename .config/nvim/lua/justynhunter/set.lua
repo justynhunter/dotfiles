@@ -38,5 +38,3 @@ vim.g.OmniSharp_server_use_net6 = 1
 vim.g.OmniSharp_highlighting = 0
 vim.g.dotnet_errors_only = true
 vim.g.dotnet_show_project_file = false
-
-vim.g.netrw_liststyle = 3 -- tree view
