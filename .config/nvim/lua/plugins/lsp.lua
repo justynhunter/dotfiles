@@ -23,7 +23,7 @@ return {
 
             lspconfig.astro.setup({
                 capabilities = lsp_capabilities,
-                cmd = { "/usr/local/bin/astro-ls", "--stdio" },
+                cmd = { "/Users/jhunter/.nodenv/shims/astro-ls", "--stdio" },
                 filetypes = { "astro" },
                 init_options = { typescript = {} },
                 root_dir = lspconfig.util.root_pattern("package.json", "tsconfig.json", "jsconfig.json", ".git")
