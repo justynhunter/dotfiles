@@ -18,6 +18,6 @@ option_as_alt = "Both"
 
 [font]
 normal.family = "BlexMono Nerd Font Mono"
-normal.style = "Medium"
+normal.style = "Regular"
 size = 16
 
