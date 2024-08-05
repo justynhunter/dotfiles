@@ -36,6 +36,9 @@ vim.keymap.set("n", "<leader>y", "\"+y", { desc = "yank to system clipboard" })
 vim.keymap.set("v", "<leader>y", "\"+y", { desc = "yank to system clipboard" })
 vim.keymap.set("n", "<leader>Y", "\"+Y")
 
+-- toggle wrap
+vim.keymap.set("n", "<leader>w", "set wrap!", { desc = "toggle word wrap" })
+
 -- move around splits
 vim.keymap.set("n", "<leader>sh", ":split<Enter>", { desc = "split horizontal" })
 vim.keymap.set("n", "<leader>sv", ":vsplit<Enter>", { desc = "split vertical" })
