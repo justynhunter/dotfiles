@@ -9,7 +9,7 @@ return {
     config = function()
         local todo = require("todo-comments")
         todo.setup({})
-        vim.keymap.set("n", "<leader>tt", ":TodoTelescope<CR>")
-        vim.keymap.set("n", "<leader>tq", ":TodoQuickFix<CR>")
+        vim.keymap.set("n", "<leader>tt", ":TodoTelescope<CR>", { desc = "Open Todos in Telescope" })
+        vim.keymap.set("n", "<leader>tq", ":TodoQuickFix<CR>", { desc = "Open Todos in QF list" })
     end
 }
