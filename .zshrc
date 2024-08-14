@@ -2,20 +2,17 @@ source $ZSH/oh-my-zsh.sh
 
 export EDITOR=nvim
 export DOTNET_ROOT="/usr/local/share/dotnet"
+
+source <(fzf --zsh)
+
 # nodenv
 eval "$(nodenv init -)"
 
-function g() {
-    rg -l $1 | fzf-tmux -p --reverse | xargs nvim
-}
 alias vim="nvim"
-alias v="fd --type f --hidden --exclude .git | fzf -m --preview 'bat --color=always {}' | xargs nvim"
 alias gu="git reset HEAD~"
-
 alias ls="eza --color=always --no-filesize --icons=always --no-time --no-user --no-permissions"
 alias la="eza --all --color=always --long --no-filesize --icons=always --no-time --no-user --no-permissions"
 alias ll="eza --all --color=always --long --icons=always --no-permissions -o -B"
-
 alias cd="z"
 
 # sesh
@@ -34,9 +31,6 @@ if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
     eval "$(oh-my-posh init zsh --config $(brew --prefix oh-my-posh)/themes/pure.omp.json)"
 fi
 
-# opam
-[[ ! -r /Users/justynhunter/.opam/opam-init/init.zsh ]] || source /Users/justynhunter/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
-
 # history setup
 HISTFILE=$HOME/.zhistory
 SAVEHIST=1000
@@ -50,12 +44,10 @@ setopt hist_verify
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
-source <(fzf --zsh)
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # pnpm
-export PNPM_HOME="/Users/jhunter/Library/pnpm"
 case ":$PATH:" in
     *":$PNPM_HOME:"*) ;;
     *) export PATH="$PNPM_HOME:$PATH" ;;
@@ -89,6 +81,5 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
 [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
+export PNPM_HOME="/Users/jhunter/Library/pnpm"
 export PATH="$PATH:/Users/jhunter/.dotnet/tools" #work
-export PATH="$PATH:/Users/justynhunter/.dotnet/tools" #home
-
