@@ -55,6 +55,7 @@ return {
             })
             -- end css
 
+            -- others
             lspconfig.lua_ls.setup({
                 capabilities = lsp_capabilities,
             })
