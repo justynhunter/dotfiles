@@ -4,9 +4,9 @@ return {
         require("conform").setup({
             formatters_by_ft = {
                 lua = { "stylua" },
-                javascript = { "dprint" },
-                json = { "dprint" },
-                typescript = { "dprint" },
+                javascript = { "dprint", "biome" },
+                json = { "dprint", "biome" },
+                typescript = { "dprint", "biome" },
                 astro = { "dprint" },
             },
             format_on_save = {
