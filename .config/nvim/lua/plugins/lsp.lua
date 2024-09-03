@@ -92,14 +92,6 @@ return {
                 capabilities = lsp_capabilities,
             })
 
-            lspconfig.rust_analyzer.setup({
-                capabilities = lsp_capabilities,
-            })
-
-            lspconfig.elmls.setup({
-                capabilities = lsp_capabilities,
-            })
-
             vim.api.nvim_create_autocmd("LspAttach", {
                 desc = 'LSP actions',
                 callback = function(args)
