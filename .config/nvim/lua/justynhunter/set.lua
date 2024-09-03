@@ -38,3 +38,12 @@ vim.g.OmniSharp_server_use_net6 = 1
 vim.g.OmniSharp_highlighting = 0
 vim.g.dotnet_errors_only = true
 vim.g.dotnet_show_project_file = false
+
+-- folds
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+vim.opt.foldcolumn = "0"
+vim.opt.foldtext = ""
+vim.opt.foldlevel = 99
+vim.opt.foldlevelstart = 99
+vim.opt.foldnestmax = 4
