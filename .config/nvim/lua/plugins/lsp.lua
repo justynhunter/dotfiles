@@ -95,22 +95,23 @@ return {
             vim.api.nvim_create_autocmd("LspAttach", {
                 desc = 'LSP actions',
                 callback = function(args)
-                    local bufmap = function(mode, lhs, rhs)
-                        local opts = { buffer = true }
+                    local bufmap = function(mode, lhs, rhs, desc)
+                        local opts = { buffer = true, desc = desc }
                         vim.keymap.set(mode, lhs, rhs, opts)
                     end
 
-                    bufmap("n", "gh", "<cmd>lua vim.lsp.buf.hover()<CR>")
-                    bufmap("n", "gs", "<cmd>lua vim.lsp.buf.signature_help()<CR>")
-                    bufmap("n", "grn", "<cmd>lua vim.lsp.buf.rename()<CR>")
+
+                    bufmap("n", "gh", "<cmd>lua vim.lsp.buf.hover()<CR>", "show help hover")
+                    bufmap("n", "gs", "<cmd>lua vim.lsp.buf.signature_help()<CR>", "signature help?")
+                    bufmap("n", "grn", "<cmd>lua vim.lsp.buf.rename()<CR>", "rename symbol")
                     -- Selects a code action available at the current cursor position
-                    bufmap('n', 'ga', '<cmd>lua vim.lsp.buf.code_action()<cr>')
+                    bufmap('n', 'ga', '<cmd>lua vim.lsp.buf.code_action()<cr>', "code actions")
                     -- Show diagnostics in a floating window
-                    bufmap('n', 'gl', '<cmd>lua vim.diagnostic.open_float()<cr>')
+                    bufmap('n', 'gl', '<cmd>lua vim.diagnostic.open_float()<cr>', "show diagnostic in float")
                     -- Move to the previous diagnostic
-                    bufmap('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<cr>')
+                    bufmap('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<cr>', "next diagnostic")
                     -- Move to the next diagnostic
-                    bufmap('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<cr>')
+                    bufmap('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<cr>', "previous diagnostic")
                 end
             })
 
