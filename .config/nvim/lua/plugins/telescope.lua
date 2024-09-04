@@ -23,7 +23,7 @@ return {
             vim.keymap.set("n", "<leader>m", builtin.marks, { desc = "search marks" })
             vim.keymap.set("n", "<leader>sd", builtin.lsp_document_symbols, { desc = "search document symbols" })
             vim.keymap.set("n", "<leader>sw", builtin.lsp_workspace_symbols, { desc = "search workspace symbols" })
-            vim.keymap.set("n", "gr", builtin.lsp_references, { desc = "find references" })
+            vim.keymap.set("n", "grr", builtin.lsp_references, { desc = "find references" })
             vim.keymap.set("n", "gd", builtin.lsp_definitions, { desc = "goto definition" })
             vim.keymap.set("n", "gi", builtin.lsp_implementations, { desc = "find implementations" })
             vim.keymap.set("n", "<leader>ci", builtin.lsp_incoming_calls, { desc = "find callers" })
@@ -33,4 +33,3 @@ return {
         end
     }
 }
-
