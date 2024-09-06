@@ -7,7 +7,7 @@ return {
             local lsp_capabilities = require("cmp_nvim_lsp").default_capabilities()
 
             -- Typescript
-            lspconfig.tsserver.setup({
+            lspconfig.ts_ls.setup({
                 capabilities = lsp_capabilities,
             })
 
@@ -99,7 +99,6 @@ return {
                         local opts = { buffer = true, desc = desc }
                         vim.keymap.set(mode, lhs, rhs, opts)
                     end
-
 
                     bufmap("n", "gh", "<cmd>lua vim.lsp.buf.hover()<CR>", "show help hover")
                     bufmap("n", "gs", "<cmd>lua vim.lsp.buf.signature_help()<CR>", "signature help?")
