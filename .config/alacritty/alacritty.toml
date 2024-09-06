@@ -16,7 +16,8 @@ blur = true
 option_as_alt = "Both"
 
 [font]
-normal.family = "BlexMono Nerd Font Mono"
+# normal.family = "BlexMono Nerd Font Mono"
+normal.family = "JetBrainsMono Nerd Font"
 normal.style = "Regular"
 size = 16
 
