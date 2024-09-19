@@ -81,6 +81,10 @@ return {
             lspconfig.golangci_lint_ls.setup({
                 capabilities = lsp_capabilities,
             })
+
+            lspconfig.templ.setup({
+                capabilities = lsp_capabilities,
+            })
             -- end Go
 
             lspconfig.elixirls.setup({
