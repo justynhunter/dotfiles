@@ -3,11 +3,12 @@ return {
     config = function()
         require("conform").setup({
             formatters_by_ft = {
-                lua = { "stylua" },
+                astro = { "dprint" },
                 javascript = { "dprint", "biome" },
                 json = { "dprint", "biome" },
+                lua = { "stylua" },
+                markdown = { "deno fmt" },
                 typescript = { "dprint", "biome" },
-                astro = { "dprint" },
             },
             format_on_save = {
                 -- These options will be passed to conform.format()
