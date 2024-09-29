@@ -119,44 +119,6 @@ return {
             })
 
             vim.opt.completeopt = { "menu", "menuone", "noselect" }
-
-            local cmp = require("cmp")
-
-            local select_opts = { behavior = cmp.SelectBehavior.Select }
-            cmp.setup({
-                sources = {
-                    { name = "path" },
-                    { name = "nvim_lsp",  keyword_length = 1 },
-                    { name = "buffer",    keyword_length = 3 },
-                    { name = "supermaven" },
-                },
-                formatting = {
-                    expandable_indicator = true,
-                    fields = { 'menu', 'abbr', 'kind' },
-                    format = function(entry, item)
-                        local menu_icon = {
-                            nvim_lsp = 'λ',
-                            luasnip = '⋗',
-                            buffer = 'Ω',
-                            path = '🖫',
-                            supermaven = '⚡',
-                        }
-
-                        item.menu = menu_icon[entry.source.name]
-                        return item
-                    end,
-                },
-                mapping = {
-                    ['<C-p>'] = cmp.mapping.select_prev_item(select_opts),
-                    ['<C-n>'] = cmp.mapping.select_next_item(select_opts),
-
-                    ['<C-u>'] = cmp.mapping.scroll_docs(-4),
-                    ['<C-d>'] = cmp.mapping.scroll_docs(4),
-
-                    ['<C-e>'] = cmp.mapping.abort(),
-                    ['<C-y>'] = cmp.mapping.confirm({ select = true }),
-                },
-            })
         end
     },
 }
