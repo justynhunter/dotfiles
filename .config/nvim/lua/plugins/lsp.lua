@@ -130,9 +130,6 @@ return {
                     { name = "buffer",    keyword_length = 3 },
                     { name = "supermaven" },
                 },
-                window = {
-                    documentation = cmp.config.window.bordered(),
-                },
                 formatting = {
                     expandable_indicator = true,
                     fields = { 'menu', 'abbr', 'kind' },
