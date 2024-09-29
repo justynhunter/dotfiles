@@ -22,8 +22,12 @@ return {
                     end
                 },
                 window = {
-                    completion = cmp.config.window.bordered(),
-                    documentation = cmp.config.window.bordered(),
+                    completion = {
+                        -- winhighlight = "Normal:NormalFloat",
+                    },
+                    documentation = {
+                        -- winhighlight = "Normal:NormalFloat",
+                    },
                 },
                 mapping = cmp.mapping.preset.insert({
                     ["<C-b>"] = cmp.mapping.scroll_docs(-4),
@@ -31,6 +35,8 @@ return {
                     ["<C-space>"] = cmp.mapping.complete(),
                     ["<C-E>"] = cmp.mapping.abort(),
                     ["<C-y>"] = cmp.mapping.confirm({ select = true }),
+                    ["<Tab>"] = cmp.mapping.confirm({ select = true }),
+                    ["<CR>"] = cmp.mapping.confirm({ select = true }),
                 }),
                 sources = cmp.config.sources({
                     { name = "nvim_lsp" },
