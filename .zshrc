@@ -6,6 +6,7 @@ export DOTNET_ROOT="/usr/local/share/dotnet"
 # nodenv
 eval "$(nodenv init -)"
 
+alias nmap-ssl="nmap --script ssl-enum-ciphers -p 443"
 alias vim="nvim"
 alias gu="git reset HEAD~"
 alias ls="eza --color=always --no-filesize --icons=always --no-time --no-user --no-permissions"
