@@ -1,9 +1,10 @@
 // If you'd like to override the default keybindings completely, be sure to change "keybinds" to "keybinds clear-defaults=true"
+theme "catppuccin-latte"
 keybinds {
-    normal {
-        // uncomment this and adjust key if using copy_on_select=false
-        // bind "Alt c" { Copy; }
-    }
+//    normal clear-defaults=true {
+//            bind "Ctrl Space" { SwitchToMode "Tmux"; }
+//            unbind "Ctrl b"
+//    }
     locked {
         bind "Ctrl g" { SwitchToMode "Normal"; }
     }
@@ -279,7 +280,6 @@ plugins {
 // Choose the theme that is specified in the themes section.
 // Default: default
 //
-theme "catppuccin-frappe"
 
 // The name of the default layout to load on startup
 // Default: "default"
