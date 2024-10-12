@@ -42,7 +42,7 @@ setopt hist_verify
 # zsh plugins
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+# source $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
@@ -85,3 +85,4 @@ export PATH="$PATH:/Users/jhunter/.dotnet/tools" #work
 export PATH="/usr/local/opt/libpq/bin:$PATH"
 
 source <(fzf --zsh)
+bindkey -v
