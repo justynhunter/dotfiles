@@ -85,4 +85,4 @@ export PATH="$PATH:/Users/jhunter/.dotnet/tools" #work
 export PATH="/usr/local/opt/libpq/bin:$PATH"
 
 source <(fzf --zsh)
-bindkey -v
+bindkey -v # vim key mode
