@@ -42,6 +42,7 @@ return {
                             buffer = 'Ω',
                             path = '🖫',
                             supermaven = '⚡',
+                            copilot = "",
                         }
 
                         item.menu = menu_icon[entry.source.name]
@@ -58,18 +59,19 @@ return {
                     ["<C-space>"] = cmp.mapping.complete(),
 
                     ["<Tab>"] = cmp.mapping.confirm({ select = true }),
-                    ["<CR>"] = cmp.mapping.confirm({ select = true }),
+                    -- ["<CR>"] = cmp.mapping.confirm({ select = true }),
 
                     ["<C-e>"] = cmp.mapping.abort(),
-                    ["<C-y>"] = cmp.mapping.confirm({ select = true }),
+                    -- ["<C-y>"] = cmp.mapping.confirm({ select = true }),
                 }),
                 sources = cmp.config.sources({
-                    { name = "path" },
-                    { name = "nvim_lsp",  keyword_length = 1 },
+                    { name = "path",      group_index = 2 },
+                    { name = "nvim_lsp",  group_index = 2,   keyword_length = 1 },
                     { name = "buffer",    keyword_length = 3 },
-                    { name = "luasnip" },
+                    { name = "luasnip",   group_index = 2 },
                     { name = "buffer" },
                     { name = "supermaven" },
+                    -- { name = "copilot",   group_index = 2 },
                 }),
             }
         end,
