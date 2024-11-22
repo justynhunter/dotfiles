@@ -7,8 +7,8 @@ vim.keymap.set("n", "<leader>e", vim.cmd.Ex)
 vim.keymap.set("n", "<leader>/", "<cmd>nohlsearch<CR>", { desc = "clear search" })
 
 --quickfix list
-vim.keymap.set("n", "<M-j>", "<cmd>cnext<CR>zz", { desc = "Forward qfixlist" })
-vim.keymap.set("n", "<M-k>", "<cmd>cprev<CR>zz", { desc = "Backward qfixlist" })
+-- vim.keymap.set("n", "<M-j>", "<cmd>cnext<CR>zz", { desc = "Forward qfixlist" })
+-- vim.keymap.set("n", "<M-k>", "<cmd>cprev<CR>zz", { desc = "Backward qfixlist" })
 vim.keymap.set("n", "<leader>q", "<cmd>copen<CR>", { desc = "open quickfix list" })
 vim.keymap.set("n", "<leader>Q", "<cmd>ccl<CR>", { desc = "close quickfix list" })
 vim.keymap.set("n", "<leader>d", "<cmd>lua vim.diagnostic.setqflist()<CR><cmd>copen<CR>",
