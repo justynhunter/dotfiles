@@ -14,6 +14,20 @@ alias la="eza --all --color=always --long --no-filesize --icons=always --no-time
 alias ll="eza --all --color=always --long --icons=always --no-permissions -o -B"
 alias cd="z"
 
+# dotnet alias
+alias dn="dotnet"
+alias dnt="dotnet test"
+alias dnr="dotnet run"
+alias dnw="dotnet watch"
+
+# git aliases
+alias ga="git add ."
+alias gp="git pull"
+alias gs="git push"
+alias gc="git commit"
+alias gs="git stash"
+alias gsp="git stash pop"
+
 # sesh
 function t() {
     if [ $1 != "" ]; then
