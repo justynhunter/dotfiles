@@ -4,15 +4,11 @@ return {
         lazy = false,
         config = function()
             local lspconfig = require("lspconfig")
-            local lsp_capabilities = require("cmp_nvim_lsp").default_capabilities()
 
             -- Typescript
-            lspconfig.ts_ls.setup({
-                capabilities = lsp_capabilities,
-            })
+            lspconfig.ts_ls.setup({})
 
             lspconfig.eslint.setup({
-                capabilities = lsp_capabilities,
                 on_attach = function(client, bufnr)
                     vim.api.nvim_create_autocmd("BufWritePre", {
                         buffer = bufnr,
@@ -22,7 +18,6 @@ return {
             })
 
             lspconfig.astro.setup({
-                capabilities = lsp_capabilities,
                 cmd = { "/Users/jhunter/.nodenv/shims/astro-ls", "--stdio" },
                 filetypes = { "astro" },
                 init_options = { typescript = {} },
@@ -31,70 +26,42 @@ return {
             -- End Typescript
 
             -- formatters / linters
-            lspconfig.dprint.setup({
-                capabilities = lsp_capabilities,
-            })
+            lspconfig.dprint.setup({})
             lspconfig.biome.setup({
-                capabilities = lsp_capabilities,
                 filetypes = { "javascript", "javascriptreact", "json", "jsonc", "typescript", "typescript.tsx", "typescriptreact", "astro", "svelte", "vue" }
             })
-            lspconfig.stylelint_lsp.setup({
-                capabilities = lsp_capabilities,
-            })
+            lspconfig.stylelint_lsp.setup({})
             -- end formatters / linters
 
             -- css
-            lspconfig.cssls.setup({
-                capabilities = lsp_capabilities,
-            })
-            lspconfig.cssmodules_ls.setup({
-                capabilities = lsp_capabilities,
-            })
-            lspconfig.css_variables.setup({
-                capabilities = lsp_capabilities,
-            })
+            lspconfig.cssls.setup({})
+            lspconfig.cssmodules_ls.setup({})
+            lspconfig.css_variables.setup({})
             -- end css
 
             -- others
-            lspconfig.lua_ls.setup({
-                capabilities = lsp_capabilities,
-            })
+            lspconfig.lua_ls.setup({})
 
-            lspconfig.gleam.setup({
-                capabilities = lsp_capabilities,
-            })
+            lspconfig.gleam.setup({})
 
             lspconfig.omnisharp.setup({
                 cmd = { "dotnet", "/Library/omnisharp/OmniSharp.dll" },
-                capabilities = lsp_capabilities,
+
             })
 
-            lspconfig.ocamllsp.setup({
-                capabilities = lsp_capabilities,
-            })
+            lspconfig.ocamllsp.setup({})
 
             -- Go
-            lspconfig.gopls.setup({
-                capabilities = lsp_capabilities,
-            })
-
-            lspconfig.golangci_lint_ls.setup({
-                capabilities = lsp_capabilities,
-            })
-
-            lspconfig.templ.setup({
-                capabilities = lsp_capabilities,
-            })
+            lspconfig.gopls.setup({})
+            lspconfig.golangci_lint_ls.setup({})
+            lspconfig.templ.setup({})
             -- end Go
 
             lspconfig.elixirls.setup({
-                capabilities = lsp_capabilities,
                 cmd = { "/usr/local/bin/elixir-ls" }
             })
 
-            lspconfig.marksman.setup({
-                capabilities = lsp_capabilities,
-            })
+            lspconfig.marksman.setup({})
 
             vim.api.nvim_create_autocmd("LspAttach", {
                 desc = 'LSP actions',
