@@ -3,6 +3,9 @@ vim.g.mapleader = " "
 -- netrw
 vim.keymap.set("n", "<leader>e", vim.cmd.Ex)
 
+-- add blank line
+vim.keymap.set("n", "<C-CR>", "o<ESC>k", { desc = "add blank line below" })
+
 -- search
 vim.keymap.set("n", "<leader>/", "<cmd>nohlsearch<CR>", { desc = "clear search" })
 
