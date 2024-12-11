@@ -4,17 +4,22 @@ return {
     },
     {
         "nvim-telescope/telescope.nvim",
-        dependencies = { "nvim-lua/plenary.nvim" },
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            { "nvim-telescope/telescope-fzf-native.nvim", build = "make" }
+        },
         config = function()
             require("telescope").setup({
                 extensions = {
-                    ["ui-select"] = {
-                        require("telescope.themes").get_dropdown({}),
-                    },
+                    fzf = {},
+                    -- ["ui-select"] = {
+                    --     require("telescope.themes").get_dropdown({}),
+                    -- },
                 },
             })
-            local builtin = require("telescope.builtin")
+            require("telescope").load_extension("fzf")
 
+            local builtin = require("telescope.builtin")
             vim.keymap.set("n", "<leader> ", builtin.find_files, { desc = "find files" })
             vim.keymap.set("n", "<leader>f", builtin.live_grep, { desc = "Search by Grep" })
             vim.keymap.set("n", "<leader>k", builtin.keymaps, { desc = "search keymaps" })
