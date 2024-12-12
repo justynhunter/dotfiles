@@ -63,7 +63,7 @@ return {
                     additional_vim_regex_highlighting = false,
                 },
 
-                -- enable indentation
+                -- disable indentation
                 indent = { enable = false },
 
                 incremental_selection = {
