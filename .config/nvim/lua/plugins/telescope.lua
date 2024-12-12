@@ -12,16 +12,34 @@ return {
             require("telescope").setup({
                 extensions = {
                     fzf = {},
-                    -- ["ui-select"] = {
-                    --     require("telescope.themes").get_dropdown({}),
-                    -- },
                 },
             })
             require("telescope").load_extension("fzf")
 
+            function vim.getVisualSelection()
+                vim.cmd('noau normal! "vy"')
+                local text = vim.fn.getreg('v')
+                vim.fn.setreg('v', {})
+
+                text = string.gsub(text, "\n", "")
+                if #text > 0 then
+                    return text
+                else
+                    return ''
+                end
+            end
+
             local builtin = require("telescope.builtin")
             vim.keymap.set("n", "<leader> ", builtin.find_files, { desc = "find files" })
+            vim.keymap.set("v", "<leader> ", function()
+                local text = vim.getVisualSelection()
+                builtin.find_files({ default_text = text, desc = "find selection in files" })
+            end)
             vim.keymap.set("n", "<leader>f", builtin.live_grep, { desc = "Search by Grep" })
+            vim.keymap.set("v", "<leader>f", function()
+                local text = vim.getVisualSelection()
+                builtin.live_grep({ default_text = text, desc = "Search selection by Grep" })
+            end)
             vim.keymap.set("n", "<leader>k", builtin.keymaps, { desc = "search keymaps" })
             vim.keymap.set("n", "<leader>b", builtin.buffers, { desc = "search buffers" })
             vim.keymap.set("n", "<leader>h", builtin.help_tags, { desc = "search help" })
