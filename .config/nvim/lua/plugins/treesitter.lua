@@ -130,6 +130,9 @@ return {
                             ["[c"] = { query = "@class.outer", desc = "Prev class start" },
                             ["[i"] = { query = "@conditional.outer", desc = "Prev conditional start" },
                             ["[l"] = { query = "@loop.outer", desc = "Prev loop start" },
+
+                            ["[s"] = { query = "@scope", query_group = "locals", desc = "Next scope" },
+                            ["[z"] = { query = "@fold", query_group = "folds", desc = "Next fold" },
                         },
                         goto_previous_end = {
                             ["[F"] = { query = "@call.outer", desc = "Prev function call start" },
