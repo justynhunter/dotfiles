@@ -59,6 +59,8 @@ vim.keymap.set("n", "<leader>w", "<cmd>set wrap!<CR>", { desc = "toggle word wra
 -- move around splits
 vim.keymap.set("n", "<leader>sh", ":split<Enter>", { desc = "split horizontal" })
 vim.keymap.set("n", "<leader>sv", ":vsplit<Enter>", { desc = "split vertical" })
+vim.keymap.set("n", "<leader>sr", "<C-w>r", { desc = "rotate up/left" })
+vim.keymap.set("n", "<leader>sr", "<C-w>R", { desc = "rotate down/right" })
 vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "move to left pane" })
 vim.keymap.set("n", "<C-l>", "<C-w>l", { desc = "move to right pane" })
 vim.keymap.set("n", "<C-k>", "<C-w>k", { desc = "move to up pane" })
