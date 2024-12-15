@@ -28,6 +28,8 @@ vim.keymap.set("n", "<leader>d", "<cmd>lua vim.diagnostic.setqflist()<CR><cmd>co
 
 -- fix indenting
 vim.keymap.set("n", "<leader>i", "gg=G``", { desc = "fix indenting" })
+vim.keymap.set("n", "<Tab>", ">>", { desc = "increase indenting" })
+vim.keymap.set("n", "<S-Tab>", "<<", { desc = "decrease indenting" })
 
 -- move line up and down
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "move line down" })
