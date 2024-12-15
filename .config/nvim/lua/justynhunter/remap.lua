@@ -64,8 +64,8 @@ vim.keymap.set("n", "<C-l>", "<C-w>l", { desc = "move to right pane" })
 vim.keymap.set("n", "<C-k>", "<C-w>k", { desc = "move to up pane" })
 vim.keymap.set("n", "<C-j>", "<C-w>j", { desc = "move to down pane" })
 
--- unmap
-vim.keymap.set("n", "Q", "<nop>")
+-- Run Q Macro
+vim.keymap.set("n", "Q", "@q")
 
 -- make current file executeable
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true, desc = "make file executable" })
