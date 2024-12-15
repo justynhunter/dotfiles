@@ -39,8 +39,8 @@ vim.keymap.set("n", "*", ":keepjumps normal! mi*`i<CR>")
 vim.keymap.set("n", "J", "mzJ`z", { desc = "keep cursor location on join" })
 
 -- page down and up
-vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "down 5 lines" })
-vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "upd 5 lines" })
+vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "down half page" })
+vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "up half page" })
 
 -- next/prev match, center screen
 vim.keymap.set("n", "n", "nzzzv", { desc = "next match, center screen" })
