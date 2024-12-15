@@ -63,6 +63,8 @@ vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "move to left pane" })
 vim.keymap.set("n", "<C-l>", "<C-w>l", { desc = "move to right pane" })
 vim.keymap.set("n", "<C-k>", "<C-w>k", { desc = "move to up pane" })
 vim.keymap.set("n", "<C-j>", "<C-w>j", { desc = "move to down pane" })
+vim.keymap.set("n", "<leader>c", "<cmd>bp<bar>bd #<CR>", { desc = "move to down pane" })
+vim.keymap.set("n", "<leader>C", "<cmd>bd<CR>", { desc = "move to down pane" })
 
 -- Run Q Macro
 vim.keymap.set("n", "Q", "@q")

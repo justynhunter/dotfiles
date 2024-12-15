@@ -49,8 +49,6 @@ return {
             vim.keymap.set("n", "grr", builtin.lsp_references, { desc = "find references" })
             vim.keymap.set("n", "gd", builtin.lsp_definitions, { desc = "goto definition" })
             vim.keymap.set("n", "gi", builtin.lsp_implementations, { desc = "find implementations" })
-            vim.keymap.set("n", "<leader>ci", builtin.lsp_incoming_calls, { desc = "find callers" })
-            vim.keymap.set("n", "<leader>co", builtin.lsp_outgoing_calls, { desc = "find outbound calls" })
 
             require("telescope").load_extension("ui-select")
         end
