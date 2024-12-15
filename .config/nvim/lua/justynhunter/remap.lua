@@ -49,7 +49,6 @@ vim.keymap.set("n", "N", "Nzzzv", { desc = "previous match, center screen" })
 -- yank to system clipboard
 vim.keymap.set("n", "<leader>y", "\"+y", { desc = "yank to system clipboard" })
 vim.keymap.set("v", "<leader>y", "\"+y", { desc = "yank to system clipboard" })
-vim.keymap.set("n", "<leader>Y", "\"+Y")
 
 -- toggle wrap
 vim.keymap.set("n", "<leader>w", "<cmd>set wrap!<CR>", { desc = "toggle word wrap" })
