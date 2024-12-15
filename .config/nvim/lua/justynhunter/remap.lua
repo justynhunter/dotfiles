@@ -35,6 +35,7 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "move line up" })
 
 -- keep cursor position on `*`
 vim.keymap.set("n", "*", ":keepjumps normal! mi*`i<CR>")
+
 -- remove whitespace below
 vim.keymap.set("n", "J", "mzJ`z", { desc = "keep cursor location on join" })
 
