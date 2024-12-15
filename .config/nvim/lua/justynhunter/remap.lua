@@ -67,7 +67,7 @@ vim.keymap.set("n", "<C-j>", "<C-w>j", { desc = "move to down pane" })
 -- unmap
 vim.keymap.set("n", "Q", "<nop>")
 
--- make executeable
+-- make current file executeable
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true, desc = "make file executable" })
 
 -- swap buffers
