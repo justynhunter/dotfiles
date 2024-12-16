@@ -27,7 +27,6 @@ vim.keymap.set("n", "<leader>d", "<cmd>lua vim.diagnostic.setqflist()<CR><cmd>co
     { desc = "send diagnostics to qflist" })
 
 -- fix indenting
-vim.keymap.set("n", "<leader>i", "gg=G``", { desc = "fix indenting" })
 vim.keymap.set("n", "<Tab>", ">>", { desc = "increase indenting" })
 vim.keymap.set("n", "<S-Tab>", "<<", { desc = "decrease indenting" })
 
