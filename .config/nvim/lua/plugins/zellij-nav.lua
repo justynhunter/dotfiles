@@ -1,6 +1,6 @@
 return {
     "https://git.sr.ht/~swaits/zellij-nav.nvim",
-    enabled = false,
+    enabled = true,
     lazy = true,
     event = "VeryLazy",
     keys = {
