@@ -26,6 +26,9 @@ exec --no-startup-id dex --autostart --environment i3
 # Picom
 exec --no-startup-id picom
 
+# Remap caps to ctrl on hold and esc on tap
+exec_always --no-startup-id setxkbmap -option ctrl:nocaps && xcape -e 'Control_L=Escape' -t 175
+
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
 
