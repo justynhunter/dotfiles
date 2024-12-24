@@ -1,7 +1,8 @@
 vim.g.mapleader = " "
 
 -- netrw
-vim.keymap.set("n", "<leader>e", vim.cmd.Ex)
+-- vim.keymap.set("n", "<leader>e", vim.cmd.Ex)
+vim.keymap.set("n", "<leader>e", "<cmd>Oil<CR>")
 
 -- add blank line
 vim.keymap.set("n", "<C-CR>", "mzo<ESC>k`z", { desc = "add blank line below" })
