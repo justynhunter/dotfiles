@@ -1,0 +1,16 @@
+copy-on-select = true
+cursor-click-to-move = true
+
+font-family = "Hack Nerd Font Mono"
+font-size = 14
+
+mouse-hide-while-typing = true
+
+shell-integration = zsh
+
+theme = catppuccin-frappe
+
+window-decoration = false
+
+window-padding-x = 5
+window-padding-y = 5
