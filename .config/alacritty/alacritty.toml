@@ -23,7 +23,7 @@ option_as_alt = "Both"
 # normal.family = "Monaspace Neon Var"
 # normal.family = "Fira Code"
 normal.family = "Hack Nerd Font Mono"
-size = 16
+size = 14
 normal.style = "Regular"
 
 # normal.family = "Ubuntu Mono"
