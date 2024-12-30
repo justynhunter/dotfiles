@@ -73,7 +73,7 @@ bindsym XF86MonBrightnessUp exec "xbacklight + 10"
 bindsym XF86MonBrightnessDown exec "xbacklight - 10"
 
 # start a terminal
-bindsym $mod+Return exec --no-startup-id kitty
+bindsym $mod+Return exec --no-startup-id ghostty
 
 # kill focused window
 bindsym $mod+Shift+q kill
