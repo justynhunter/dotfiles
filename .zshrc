@@ -1,10 +1,48 @@
-source $ZSH/oh-my-zsh.sh
-
 export EDITOR=nvim
 export DOTNET_ROOT="/usr/local/share/dotnet"
 
-# nodenv
-eval "$(nodenv init -)"
+# Mac settings
+if [[ "$(uname -s)" == "Darwin" ]]; then
+    # nodenv
+    eval "$(nodenv init -)"
+    source $ZSH/oh-my-zsh.sh
+
+    # set oh my posh theme
+    if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
+        eval "$(oh-my-posh init zsh --config $(brew --prefix oh-my-posh)/themes/pure.omp.json)"
+    fi
+
+    # zsh plugins
+    source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+    source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+    export NVM_DIR="$HOME/.nvm"
+    [ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+    [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
+    export PNPM_HOME="/Users/jhunter/Library/pnpm"
+    export PATH="$PATH:/Users/jhunter/.dotnet/tools" #work
+    export PATH="/usr/local/opt/libpq/bin:$PATH"
+fi
+
+# Linux settings
+if [[ "$(uname -s)" == "Linux" ]]; then
+    export N_PREFIX=/home/jhunter/.n
+    
+    source /usr/share/oh-my-zsh/oh-my-zsh.sh
+
+    eval "$(oh-my-posh init zsh --config /usr/share/oh-my-posh/themes/pure.omp.json)"
+
+    # pnpm
+    export PNPM_HOME="/home/jhunter/.local/share/pnpm"
+    case ":$PATH:" in
+      *":$PNPM_HOME:"*) ;;
+      *) export PATH="$PNPM_HOME:$PATH" ;;
+    esac
+    # pnpm end
+    
+    source /usr/share/nvm/init-nvm.sh
+fi
 
 alias nmap-ssl="nmap --script ssl-enum-ciphers -p 443"
 alias vim="nvim"
@@ -39,11 +77,6 @@ function t() {
 
 eval "$(zoxide init zsh)"
 
-# set oh my posh theme
-if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
-    eval "$(oh-my-posh init zsh --config $(brew --prefix oh-my-posh)/themes/pure.omp.json)"
-fi
-
 # history setup
 HISTFILE=$HOME/.zhistory
 SAVEHIST=1000
@@ -52,10 +85,6 @@ setopt share_history
 setopt hist_expire_dups_first
 setopt hist_ignore_dups
 setopt hist_verify
-
-# zsh plugins
-source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # source $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -89,14 +118,6 @@ fuck () {
     export PYTHONIOENCODING=$TF_PYTHONIOENCODING;
     test -n "$TF_CMD" && print -s $TF_CMD
 }
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
-
-export PNPM_HOME="/Users/jhunter/Library/pnpm"
-export PATH="$PATH:/Users/jhunter/.dotnet/tools" #work
-export PATH="/usr/local/opt/libpq/bin:$PATH"
 
 source <(fzf --zsh)
 bindkey -v # vim key mode
