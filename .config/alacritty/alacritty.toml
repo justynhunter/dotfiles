@@ -1,7 +1,7 @@
 import = [
     # "~/.config/alacritty/themes/catppuccin-latte.toml"
-    "~/.config/alacritty/themes/catppuccin-frappe.toml"
-    # "~/.config/alacritty/themes/melange_dark.toml"
+    # "~/.config/alacritty/themes/catppuccin-frappe.toml"
+    "~/.config/alacritty/themes/melange_dark.toml"
 ]
 
 [env]
@@ -18,14 +18,10 @@ blur = true
 option_as_alt = "Both"
 
 [font]
-# normal.family = "BlexMono Nerd Font Mono"
+normal.family = "BlexMono Nerd Font Mono"
 # normal.family = "JetBrainsMono Nerd Font"
 # normal.family = "Monaspace Neon Var"
 # normal.family = "Fira Code"
-normal.family = "Hack Nerd Font Mono"
+# normal.family = "Hack Nerd Font Mono"
 size = 14
 normal.style = "Regular"
-
-# normal.family = "Ubuntu Mono"
-# size = 18
-
