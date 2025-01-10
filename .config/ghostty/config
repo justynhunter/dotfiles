@@ -1,8 +1,9 @@
 copy-on-select = true
 cursor-click-to-move = true
 
-font-family = "Hack Nerd Font Mono"
-font-size = 14
+font-family = "Hack Mono"
+font-thicken = true
+font-size = 12
 
 mouse-hide-while-typing = true
 
