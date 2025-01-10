@@ -92,8 +92,8 @@ bindsym $mod+b exec firefox
 bindsym $alt+space exec rofi -show combi
 
 # change focus
-bindsym $mod+h focus left
-bindsym $mod+l focus right
+bindsym $mod+p focus left
+bindsym $mod+n focus right
 bindsym $mod+j focus down
 bindsym $mod+k focus up
 
