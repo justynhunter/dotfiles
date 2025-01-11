@@ -73,6 +73,3 @@ vim.keymap.set("n", "Q", "@q")
 
 -- make current file executeable
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true, desc = "make file executable" })
-
--- swap buffers
-vim.keymap.set("n", "ss", "<cmd>e #<CR>")
