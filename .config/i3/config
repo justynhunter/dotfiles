@@ -28,7 +28,7 @@ font pango:Hack Nerd Font Mono 10
 exec --no-startup-id dex --autostart --environment i3
 
 # set background
-exec --no-startup-id hsetroot -solid '#303446'
+exec --no-startup-id hsetroot -solid '#292522'
 
 # Picom
 exec --no-startup-id picom
