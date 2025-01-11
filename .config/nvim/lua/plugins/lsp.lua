@@ -58,7 +58,7 @@ return {
             -- end Go
 
             lspconfig.elixirls.setup({
-                cmd = { "/usr/local/bin/elixir-ls" }
+                cmd = { "elixir-ls" }
             })
 
             lspconfig.marksman.setup({})
