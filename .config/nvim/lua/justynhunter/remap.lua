@@ -27,10 +27,6 @@ vim.keymap.set("n", "<leader>q", toggle_quickfix, { desc = "toggle quickfix list
 vim.keymap.set("n", "<leader>d", "<cmd>lua vim.diagnostic.setqflist()<CR><cmd>copen<CR>",
     { desc = "send diagnostics to qflist" })
 
--- fix indenting
-vim.keymap.set("n", "<Tab>", ">>", { desc = "increase indenting" })
-vim.keymap.set("n", "<S-Tab>", "<<", { desc = "decrease indenting" })
-
 -- move line up and down
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "move line down" })
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "move line up" })
