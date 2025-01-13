@@ -27,6 +27,8 @@ fi
 
 # Linux settings
 if [[ "$(uname -s)" == "Linux" ]]; then
+    # go bin
+    export PATH="$PATH:$(go env GOBIN):$(go env GOPATH)/bin"
     export N_PREFIX=/home/jhunter/.n
     
     source /usr/share/oh-my-zsh/oh-my-zsh.sh
