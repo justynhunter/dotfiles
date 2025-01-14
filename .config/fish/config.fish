@@ -4,6 +4,9 @@ end
 
 set -x EDITOR nvim
 set -x DOTNET_ROOT /usr/local/share/default
+set -x N_PREFIX ~/.n
+
+fish_add_path -a $N_PREFIX/bin
 
 # system specific configs
 if [ "(uname -s)" = "Darwin" ]

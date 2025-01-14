@@ -1,6 +1,10 @@
 export EDITOR=nvim
 export DOTNET_ROOT="/usr/local/share/dotnet"
 
+# n
+export N_PREFIX=~/.n
+export PATH="$PATH:$N_PREFIX/bin"
+
 # Mac settings
 if [[ "$(uname -s)" == "Darwin" ]]; then
     # nodenv
