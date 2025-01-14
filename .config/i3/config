@@ -17,7 +17,8 @@ default_floating_border pixel 1
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:Hack Nerd Font Mono 10
+#font pango:Hack Nerd Font Mono 10
+font pango:BlexMono Nerd Font Mono 10
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -87,6 +88,8 @@ bindsym $mod+d exec --no-startup-id dmenu_run
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
 
 bindsym $mod+b exec firefox
+bindsym $mod+m exec thunderbird
+bindsym $mod+i exec thunar
 
 # rofi
 bindsym $alt+space exec rofi -show combi
@@ -254,10 +257,19 @@ set $base      #1e1e2e
 set $mantle    #181825
 set $crust     #11111b
 
+set $ml_background #282522
+set $ml_foreground #ECE1D7
+set $ml_selection_background #403A36
+set $ml_selection_foreground #ECE1D7
+set $ml_inactive_tab_fg #ECE1D7
+set $ml_inactive_tab_bg #34302C
+set $ml_active_tab_fg #E49B5D
+set $ml_active_tab_bg #34302C
+
 # target                 title     bg    text      indicator    border
-client.focused           $mantle   $mauve $mantle  $rosewater $rosewater
-client.focused_inactive  $overlay0 $base  $text    $rosewater $overlay0
-client.unfocused         $overlay0 $base  $text    $rosewater $overlay0
-client.urgent            $peach    $base  $peach   $overlay0  $peach
-client.placeholder       $overlay0 $base  $text    $overlay0  $overlay0
-client.background        $base
+client.focused           $ml_inactive_tab_fg   $ml_active_tab_bg $ml_selection_foreground  $rosewater $rosewater
+client.focused_inactive  $overlay0 $ml_active_tab_bg  $ml_selection_foreground    $rosewater $overlay0
+client.unfocused         $ml_inactive_tab_bg $ml_inactive_tab_bg $ml_selection_foreground    $rosewater $overlay0
+client.urgent            $peach    $ml_background  $peach   $overlay0  $peach
+client.placeholder       $overlay0 $ml_background  $text    $overlay0  $overlay0
+client.background        $ml_background
