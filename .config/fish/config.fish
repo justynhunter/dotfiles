@@ -5,7 +5,7 @@ end
 set -x EDITOR nvim
 set -x DOTNET_ROOT /usr/local/share/default
 
-# Mac
+# system specific configs
 if [ "(uname -s)" = "Darwin" ]
     eval nodenv init -
 
