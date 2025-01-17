@@ -1,50 +1,83 @@
 {
-    "profiles": [
-        {
-            "complex_modifications": {
-                "parameters": { "basic.to_if_alone_timeout_milliseconds": 500 },
-                "rules": [
-                    {
-                        "description": "Change caps_lock to left_control if pressed with other keys, change caps_lock to escape if pressed alone.",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "caps_lock",
-                                    "modifiers": { "optional": ["any"] }
-                                },
-                                "to": [{ "key_code": "left_control" }],
-                                "to_if_alone": [{ "key_code": "escape" }],
-                                "type": "basic"
-                            }
-                        ]
-                    }
-                ]
-            },
-            "devices": [
-                {
-                    "identifiers": {
-                        "is_keyboard": true,
-                        "product_id": 402,
-                        "vendor_id": 1241
-                    },
-                    "simple_modifications": [
-                        {
-                            "from": { "key_code": "left_command" },
-                            "to": [{ "key_code": "left_option" }]
-                        },
-                        {
-                            "from": { "key_code": "left_option" },
-                            "to": [{ "key_code": "left_command" }]
-                        }
-                    ]
-                }
-            ],
-            "name": "Default profile",
-            "selected": true,
-            "virtual_hid_keyboard": {
-                "country_code": 0,
-                "keyboard_type_v2": "ansi"
-            }
-        }
-    ]
+	"profiles": [
+		{
+			"complex_modifications": {
+				"parameters": { "basic.to_if_alone_timeout_milliseconds": 500 },
+				"rules": [
+					{
+						"description": "Change caps_lock to left_control if pressed with other keys, change caps_lock to escape if pressed alone.",
+						"manipulators": [
+							{
+								"from": {
+									"key_code": "caps_lock",
+									"modifiers": { "optional": ["any"] }
+								},
+								"to": [{ "key_code": "left_control" }],
+								"to_if_alone": [{ "key_code": "escape" }],
+								"type": "basic",
+								"conditions": [
+									{
+										"type": "frontmost_application_if",
+										"bundle_identifiers": [
+											"net.kovidgoyal.kitty",
+											"com.mitchellh.ghostty",
+											"org.alacritty"
+										]
+									}
+								]
+							}
+						]
+					},
+					{
+						"description": "Change caps_lock to left_cmd if not in terminal",
+						"manipulators": [
+							{
+								"from": {
+									"key_code": "caps_lock",
+									"modifiers": { "optional": ["any"] }
+								},
+								"to": [{ "key_code": "left_command" }],
+								"type": "basic",
+								"conditions": [
+									{
+										"type": "frontmost_application_unless",
+										"bundle_identifiers": [
+											"net.kovidgoyal.kitty",
+											"com.mitchellh.ghostty",
+											"org.alacritty"
+										]
+									}
+								]
+							}
+						]
+					}
+				]
+			},
+			"devices": [
+				{
+					"identifiers": {
+						"is_keyboard": true,
+						"product_id": 402,
+						"vendor_id": 1241
+					},
+					"simple_modifications": [
+						{
+							"from": { "key_code": "left_command" },
+							"to": [{ "key_code": "left_option" }]
+						},
+						{
+							"from": { "key_code": "left_option" },
+							"to": [{ "key_code": "left_command" }]
+						}
+					]
+				}
+			],
+			"name": "Default profile",
+			"selected": true,
+			"virtual_hid_keyboard": {
+				"country_code": 0,
+				"keyboard_type_v2": "ansi"
+			}
+		}
+	]
 }
