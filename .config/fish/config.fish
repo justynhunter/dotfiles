@@ -2,6 +2,8 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
 end
 
+source ~/.secrets.fish
+
 set -x EDITOR nvim
 set -x DOTNET_ROOT /usr/local/share/default
 set -x N_PREFIX ~/.n
