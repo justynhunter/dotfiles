@@ -65,9 +65,12 @@ return {
             vim.keymap.set("n", "<leader>fds", builtin.lsp_document_symbols, { desc = "search document symbols" })
             vim.keymap.set("n", "<leader>fws", builtin.lsp_workspace_symbols, { desc = "search workspace symbols" })
             vim.keymap.set("n", "<leader>fi", ext.media_files.media_files)
-            vim.keymap.set("n", "grr", builtin.lsp_references, { desc = "find references" })
+            vim.keymap.set("n", "gr", builtin.lsp_references, { desc = "find references" })
             vim.keymap.set("n", "gd", builtin.lsp_definitions, { desc = "goto definition" })
             vim.keymap.set("n", "gi", builtin.lsp_implementations, { desc = "find implementations" })
+            vim.keymap.set("n", "gy", builtin.lsp_type_definitions, { desc = "find type" })
+            vim.keymap.set("n", "<leader>lci", builtin.lsp_incoming_calls, { desc = "find incoming calls" })
+            vim.keymap.set("n", "<leader>lco", builtin.lsp_outgoing_calls, { desc = "find outgoing calls" })
         end
     }
 }
