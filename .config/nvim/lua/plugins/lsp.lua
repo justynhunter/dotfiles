@@ -27,9 +27,6 @@ return {
 
             -- formatters / linters
             lspconfig.dprint.setup({})
-            lspconfig.biome.setup({
-                filetypes = { "javascript", "javascriptreact", "json", "jsonc", "typescript", "typescript.tsx", "typescriptreact", "astro", "svelte", "vue" }
-            })
             lspconfig.stylelint_lsp.setup({})
             -- end formatters / linters
 
