@@ -11,6 +11,9 @@ if not vim.loop.fs_stat(lazypath) then
     })
 end
 vim.opt.rtp:prepend(lazypath)
+vim.diagnostic.config({
+    virtual_text = false
+})
 
 require("justynhunter")
 require("lazy").setup("plugins")
