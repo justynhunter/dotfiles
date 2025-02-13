@@ -24,3 +24,6 @@ end
 
 alias vim="nvim"
 alias nmap-ssl="nmap --script ssl-enum-ciphers -p 443"
+alias ls="eza --color=always --no-filesize --icons=always --no-time --no-user --no-permissions"
+alias la="eza --all --color=always --long --no-filesize --icons=always --no-time --no-user --no-permissions"
+alias ll="eza --all --color=always --long --icons=always --no-permissions -o -B"
