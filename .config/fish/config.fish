@@ -14,7 +14,6 @@ fish_add_path -a $N_PREFIX/bin
 if [ "(uname -s)" = "Darwin" ]
     eval nodenv init -
 
-    set -x NVM_DIR $HOME/.nvim
     set -x PNPM_HOME /Users/jhunter/Library/pnpn
     fish_add_path -a /Users/jhunter/.dotnet/tools
     fish_add_path /usr/local/opt/libpq/bin
