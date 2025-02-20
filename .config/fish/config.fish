@@ -1,5 +1,5 @@
 if status is-interactive
-    # Commands to run in interactive sessions can go here
+   # Commands to run in interactive sessions can go here
 end
 
 source ~/.secrets.fish
@@ -11,15 +11,16 @@ set -x N_PREFIX ~/.n
 fish_add_path -a $N_PREFIX/bin
 # system specific configs
 if [ "$(uname -s)" = "Darwin" ]
-    set -x PNPM_HOME /Users/jhunter/Library/pnpn
-    fish_add_path -a /Users/jhunter/.dotnet/tools
-    fish_add_path /usr/local/opt/libpq/bin
+    set -x PNPM_HOME $HOME/Library/pnpm
+    fish_add_path /usr/local/opt/libpq/bin # postgres lib
 else if [ "$(uname -s)" = "Linux" ]
-    set -x N_PREFIX ~/.n
-    set -x PNPM_HOME ~/.local/share/pnpm
+    set -x PNPM_HOME $HOME/.local/share/pnpm
 end
 
+fish_add_path -a $HOME/.dotnet/tools
 fish_add_path $PNPM_HOME
+fish_add_path -a $(go env GOBIN)
+fish_add_path -a $(go env GOPATH)/bin
 
 alias vim="nvim"
 alias nmap-ssl="nmap --script ssl-enum-ciphers -p 443"
