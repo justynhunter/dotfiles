@@ -2,11 +2,11 @@ return {
     "xzbdmw/clasp.nvim",
     config = function()
         require("clasp").setup({
-            pairs = { ["{"] = "}", ['"'] = '"', ["'"] = "'", ["("] = ")", ["["] = "]" },
+            pairs = { ["{"] = "}", ['"'] = '"', ["'"] = "'", ["("] = ")", ["["] = "]", ["`"] = "`" },
         })
 
         vim.keymap.set({ "n", "i" }, "<c-f>", function()
-            require("clasp").wrap("next")
+            require("clasp").wrap("prev")
         end)
     end
 }
