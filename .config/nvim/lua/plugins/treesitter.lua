@@ -10,6 +10,9 @@ return {
                 "nvim-treesitter/playground",
                 modules = {},
                 ignore_install = {},
+                disable = function(lang, bufnr) -- disable for big files
+                    return vim.api.nvim_buf_line_count(bufnr) > 5000
+                end,
                 -- A list of parser names, or "all" (the five listed parsers should always be installed)
                 ensure_installed = {
                     "astro",
