@@ -67,5 +67,10 @@ vim.keymap.set("n", "<leader>C", "<cmd>bd<CR>", { desc = "move to down pane" })
 -- Run Q Macro
 vim.keymap.set("n", "Q", "@q")
 
+-- buffers
+vim.keymap.set("n", "bb", "<cmd>b#<CR>", { desc = "switch to last open buffer" })
+vim.keymap.set("n", "H", "<cmd>bp<CR>", { desc = "previous buffer" })
+vim.keymap.set("n", "L", "<cmd>bn<CR>", { desc = "next buffer" })
+
 -- make current file executeable
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true, desc = "make file executable" })
