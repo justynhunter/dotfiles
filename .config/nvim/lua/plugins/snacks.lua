@@ -26,6 +26,7 @@ return {
         { "<leader>fn",      function() Snacks.picker.notifications() end,                                 desc = "Find Notifications" },
         { "<leader>fr",      function() Snacks.picker.recent() end,                                        desc = "Find Recent" },
         { "<leader>fC",      function() Snacks.picker.commands() end,                                      desc = "Find Commands" },
+        { "<leader>fm",      function() Snacks.picker.marks({ on_show = normal_mode }) end,                desc = "Find Marks" },
         { "grr",             function() Snacks.picker.lsp_references({ on_show = normal_mode }) end,       desc = "Find References" },
         { "grd",             function() Snacks.picker.lsp_definitions({ on_show = normal_mode }) end,      desc = "Find Definitions" },
         { "gri",             function() Snacks.picker.lsp_implementations({ on_show = normal_mode }) end,  desc = "Find Definitions" },
