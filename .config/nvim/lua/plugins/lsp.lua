@@ -1,69 +1,53 @@
 return {
     {
         "neovim/nvim-lspconfig",
+        dependencies = {
+            "williamboman/mason.nvim",
+            "williamboman/mason-lspconfig.nvim",
+        },
         lazy = false,
         config = function()
             local lspconfig = require("lspconfig")
 
-            -- Typescript
-            lspconfig.ts_ls.setup({})
+            local servers = {
+                ts_ls = {},
+                astro = {},
+                -- formatters
+                dprint = {},
+                stylelint_lsp = {},
+                -- css
+                cssls = {},
+                cssmodules_ls = {},
+                css_variables = {},
+                -- docker
+                dockerls = {},
+                docker_compose_language_service = {},
+                -- go
+                gopls = {},
+                golangci_lint_ls = {},
+                templ = {},
+                --other
+                lua_ls = {},
+                gleam = {},
+                omnisharp = { cmd = { "dotnet", "/Library/omnisharp/OmniSharp.dll" } },
+                ocamllsp = {},
+                elixirls = { cmd = { "elixir-ls" } },
+                marksman = {},
+            }
 
-            lspconfig.eslint.setup({
-                on_attach = function(client, bufnr)
-                    vim.api.nvim_create_autocmd("BufWritePre", {
-                        buffer = bufnr,
-                        command = "EslintFixAll",
-                    })
-                end,
-            })
+            for server, config in pairs(servers) do
+                lspconfig[server].setup(config)
+            end
 
-            lspconfig.astro.setup({
-                cmd = { "astro-ls", "--stdio" },
-                filetypes = { "astro" },
-                init_options = { typescript = {} },
-                root_dir = lspconfig.util.root_pattern("package.json", "tsconfig.json", "jsconfig.json", ".git")
-            })
-            -- End Typescript
+            require("mason").setup({})
+            require("mason-lspconfig").setup({ ensure_installed = vim.tbl_keys(servers), })
 
-            -- formatters / linters
-            lspconfig.dprint.setup({})
-            lspconfig.stylelint_lsp.setup({})
-            -- end formatters / linters
-
-            -- css
-            lspconfig.cssls.setup({})
-            lspconfig.cssmodules_ls.setup({})
-            lspconfig.css_variables.setup({})
-            -- end css
-
-            -- docker
-            lspconfig.dockerls.setup({})
-            lspconfig.docker_compose_language_service.setup({})
-            -- end docker
-
-            -- others
-            lspconfig.lua_ls.setup({})
-
-            lspconfig.gleam.setup({})
-
-            lspconfig.omnisharp.setup({
-                cmd = { "dotnet", "/Library/omnisharp/OmniSharp.dll" },
-
-            })
-
-            lspconfig.ocamllsp.setup({})
-
-            -- Go
-            lspconfig.gopls.setup({})
-            lspconfig.golangci_lint_ls.setup({})
-            lspconfig.templ.setup({})
-            -- end Go
-
-            lspconfig.elixirls.setup({
-                cmd = { "elixir-ls" }
-            })
-
-            lspconfig.marksman.setup({})
+            -- lspconfig.astro.setup({
+            --     cmd = { "astro-ls", "--stdio" },
+            --     filetypes = { "astro" },
+            --     init_options = { typescript = {} },
+            --     root_dir = lspconfig.util.root_pattern("package.json", "tsconfig.json", "jsconfig.json", ".git")
+            -- })
 
             vim.api.nvim_create_autocmd("LspAttach", {
                 desc = 'LSP actions',
