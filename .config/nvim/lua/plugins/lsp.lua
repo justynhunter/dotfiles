@@ -36,6 +36,11 @@ return {
             lspconfig.css_variables.setup({})
             -- end css
 
+            -- docker
+            lspconfig.dockerls.setup({})
+            lspconfig.docker_compose_language_service.setup({})
+            -- end docker
+
             -- others
             lspconfig.lua_ls.setup({})
 
