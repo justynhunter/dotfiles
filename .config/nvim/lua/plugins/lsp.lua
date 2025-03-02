@@ -28,9 +28,7 @@ return {
                 templ = {},
                 --other
                 lua_ls = {},
-                gleam = {},
                 omnisharp = { cmd = { "dotnet", "/Library/omnisharp/OmniSharp.dll" } },
-                ocamllsp = {},
                 elixirls = { cmd = { "elixir-ls" } },
                 marksman = {},
             }
@@ -39,8 +37,14 @@ return {
                 lspconfig[server].setup(config)
             end
 
+            lspconfig.ocamllsp.setup({})
+            lspconfig.gleam.setup({})
+
             require("mason").setup({})
-            require("mason-lspconfig").setup({ ensure_installed = vim.tbl_keys(servers), })
+            require("mason-lspconfig").setup({
+                automatic_installation = true,
+                ensure_installed = vim.tbl_keys(servers),
+            })
 
             -- lspconfig.astro.setup({
             --     cmd = { "astro-ls", "--stdio" },
