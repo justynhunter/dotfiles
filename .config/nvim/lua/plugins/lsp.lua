@@ -28,7 +28,6 @@ return {
                 templ = {},
                 --other
                 lua_ls = {},
-                omnisharp = { cmd = { "dotnet", "/Library/omnisharp/OmniSharp.dll" } },
                 elixirls = { cmd = { "elixir-ls" } },
                 marksman = {},
             }
@@ -39,6 +38,7 @@ return {
 
             lspconfig.ocamllsp.setup({})
             lspconfig.gleam.setup({})
+            lspconfig.omnisharp.setup({ cmd = { "dotnet", "/Library/omnisharp/OmniSharp.dll" } })
 
             require("mason").setup({})
             require("mason-lspconfig").setup({
