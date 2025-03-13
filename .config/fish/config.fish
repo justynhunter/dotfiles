@@ -32,5 +32,5 @@ alias fzp='fzf --preview "bat --style=numbers --color=always {}"'
 #zoxide init fish --cmd cd | source
 
 set -x FZF_DEFAULT_OPTS '--tmux center --layout reverse'
-set -x FZF_DEFAULT_COMMAND "rg --files --hidden -g'!.git'"
+set -x FZF_DEFAULT_COMMAND "rg --files --hidden -g'!.git' -g'!node_modules'"
 fzf --fish | source
