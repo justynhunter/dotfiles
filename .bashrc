@@ -30,3 +30,4 @@ case ":$PATH:" in
 esac
 # pnpm end
 source /usr/share/nvm/init-nvm.sh
+. "$HOME/.cargo/env"
