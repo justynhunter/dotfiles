@@ -30,6 +30,7 @@ return {
                 lua_ls = {},
                 elixirls = { cmd = { "elixir-ls" } },
                 marksman = {},
+                rust_analyzer = {},
             }
 
             for server, config in pairs(servers) do
