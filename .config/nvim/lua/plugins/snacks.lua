@@ -20,6 +20,9 @@ return {
         -- picker
         { "<leader><space>", function() Snacks.picker.smart() end,                                         desc = "Smart Find Files" },
         { "<leader>fb",      function() Snacks.picker.buffers({ on_show = normal_mode }) end,              desc = "Find Buffers" },
+        { "<C-CR>",          function() Snacks.picker.buffers({ on_show = normal_mode }) end,              desc = "Find Buffers" },
+        { "<D-b>",           function() Snacks.picker.buffers({ on_show = normal_mode }) end,              desc = "Find Buffers" },
+        { "<M-b>",           function() Snacks.picker.buffers({ on_show = normal_mode }) end,              desc = "Find Buffers" },
         { "<leader>ff",      function() Snacks.picker.grep() end,                                          desc = "Find Grep" },
         { "<leader>fc",      function() Snacks.picker.command_history() end,                               desc = "Find Command History" },
         { "<leader>fk",      function() Snacks.picker.keymaps() end,                                       desc = "Find keymaps" },
