@@ -15,6 +15,7 @@ if [ "$(uname -s)" = "Darwin" ]
     fish_add_path /usr/local/opt/libpq/bin # postgres lib
 else if [ "$(uname -s)" = "Linux" ]
     set -x PNPM_HOME $HOME/.local/share/pnpm
+    fish_add_path ~/.npm-global/bin
 end
 
 fish_add_path -a $HOME/.dotnet/tools
