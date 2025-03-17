@@ -30,6 +30,9 @@ alias la="eza --all --color=always --long --no-filesize --icons=always --no-time
 alias ll="eza --all --color=always --long --icons=always --no-permissions -o -B"
 alias fzp='fzf --preview "bat --style=numbers --color=always {}"'
 
+# opam/ocaml
+eval (opam env)
+
 #zoxide init fish --cmd cd | source
 
 set -x FZF_DEFAULT_OPTS '--tmux center --layout reverse'
