@@ -5,6 +5,13 @@ export DOTNET_ROOT="/usr/local/share/dotnet"
 export N_PREFIX=~/.n
 export PATH="$PATH:$N_PREFIX/bin"
 
+eval "$(zoxide init zsh)"
+
+# fzf
+source <(fzf --zsh)
+export FZF_DEFAULT_OPTS='--tmux center --layout reverse'
+export FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix --exclude .git'
+
 # Mac settings
 if [[ "$(uname -s)" == "Darwin" ]]; then
     source $ZSH/oh-my-zsh.sh
@@ -52,7 +59,7 @@ alias ls="eza --color=always --no-filesize --icons=always --no-time --no-user --
 alias la="eza --all --color=always --long --no-filesize --icons=always --no-time --no-user --no-permissions"
 alias ll="eza --all --color=always --long --icons=always --no-permissions -o -B"
 alias cd="z"
-alias v="fzf | vim"
+alias v="fzf | xargs nvim"
 
 # dotnet alias
 alias dn="dotnet"
@@ -67,17 +74,6 @@ alias gs="git push"
 alias gc="git commit"
 alias gs="git stash"
 alias gsp="git stash pop"
-
-# sesh
-function t() {
-    if [ $1 != "" ]; then
-        eval "sesh connect $1"
-    else
-        eval "sesh connect $(sesh list | fzf)"
-    fi
-}
-
-eval "$(zoxide init zsh)"
 
 # history setup
 HISTFILE=$HOME/.zhistory
@@ -99,7 +95,4 @@ esac
 bindkey "^P" up-line-or-search
 bindkey "^N" down-line-or-search
 
-source <(fzf --zsh)
-export FZF_DEFAULT_OPTS='--tmux center --layout reverse'
-export FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix --exclude .git'
 bindkey -v # vim key mode
