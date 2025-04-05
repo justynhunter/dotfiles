@@ -9,8 +9,8 @@ mouse-hide-while-typing = true
 
 shell-integration = zsh
 
-theme = melange
-# theme = catppuccin-frappe
+# theme = melange
+theme = catppuccin-frappe
 
 window-decoration = false
 
