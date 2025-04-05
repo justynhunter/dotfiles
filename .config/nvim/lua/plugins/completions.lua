@@ -15,6 +15,7 @@ return {
             local cmp = require("cmp")
             require("luasnip.loaders.from_vscode").lazy_load()
             local select_opts = { behavior = cmp.SelectBehavior.Select }
+            local luasnip = require("luasnip")
 
             cmp.setup {
                 snippet = {
@@ -56,13 +57,31 @@ return {
                     ["<C-b>"] = cmp.mapping.scroll_docs(-4),
                     ["<C-f>"] = cmp.mapping.scroll_docs(4),
 
-                    -- ["<C-space>"] = cmp.mapping.complete(),
+                    ["<CR>"] = cmp.mapping(function(fallback)
+                        if cmp.visible() then
+                            if luasnip.expandable() then
+                                luasnip.expand()
+                            else
+                                cmp.confirm({
+                                    select = true,
+                                })
+                            end
+                        else
+                            fallback()
+                        end
+                    end),
 
-                    ["<Tab>"] = cmp.mapping.confirm({ select = true }),
-                    -- ["<CR>"] = cmp.mapping.confirm({ select = true }),
+                    ["<Tab>"] = cmp.mapping(function(fallback)
+                        if cmp.visible() then
+                            cmp.mapping.complete()
+                        elseif luasnip.locally_jumpable(1) then
+                            luasnip.jump(1)
+                        else
+                            fallback()
+                        end
+                    end, { "i", "s" }),
 
                     ["<C-e>"] = cmp.mapping.abort(),
-                    -- ["<C-y>"] = cmp.mapping.confirm({ select = true }),
                 }),
                 sources = cmp.config.sources({
                     { name = "path",      group_index = 2 },
