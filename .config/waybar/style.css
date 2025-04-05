@@ -1,0 +1,87 @@
+@import "frappe.css";
+
+* {
+    font-family: FantasqueSansMono Nerd Font;
+    font-size: 14px;
+    min-height: 0;
+}
+
+#waybar {
+    background: @base;
+    color: @text;
+    margin: 2px 2px;
+}
+
+#workspaces {
+    margin: 2px;
+    margin-left: 1rem;
+}
+
+#workspaces button {
+    color: @lavender;
+}
+
+#workspaces button.active {
+    color: @sky;
+}
+
+#workspaces button:hover {
+    color: @sapphire;
+}
+
+#custom-music,
+#tray,
+#backlight,
+#clock,
+#battery,
+#pulseaudio,
+#custom-lock,
+#custom-power {
+    margin: 2px 8px;
+}
+
+#clock {
+    color: @blue;
+    margin-right: 1rem;
+}
+
+#battery {
+    color: @green;
+}
+
+#battery.charging {
+    color: @green;
+}
+
+#battery.warning:not(.charging) {
+    color: @red;
+}
+
+#backlight {
+    color: @yellow;
+}
+
+#backlight,
+#battery {}
+
+#pulseaudio {
+    color: @maroon;
+    margin-left: 1rem;
+}
+
+#custom-music {
+    color: @mauve;
+}
+
+#custom-lock {
+    color: @lavender;
+}
+
+#custom-power {
+    margin-right: 1rem;
+    color: @red;
+}
+
+#tray {
+    margin-right: 1rem;
+}
