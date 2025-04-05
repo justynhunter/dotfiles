@@ -32,13 +32,16 @@ fi
 
 # Linux settings
 if [[ "$(uname -s)" == "Linux" ]]; then
+    # brew
+    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
     # go bin
     export PATH="$PATH:$(go env GOBIN):$(go env GOPATH)/bin"
     export N_PREFIX=/home/jhunter/.n
     
-    source /usr/share/oh-my-zsh/oh-my-zsh.sh
+    source $HOME/.oh-my-zsh/oh-my-zsh.sh
 
-    eval "$(oh-my-posh init zsh --config /usr/share/oh-my-posh/themes/pure.omp.json)"
+    eval "$(oh-my-posh init zsh --config $(brew --prefix oh-my-posh)/themes/pure.omp.json)"
 
     # pnpm
     export PNPM_HOME="/home/jhunter/.local/share/pnpm"
@@ -47,8 +50,6 @@ if [[ "$(uname -s)" == "Linux" ]]; then
       *) export PATH="$PNPM_HOME:$PATH" ;;
     esac
     # pnpm end
-    
-    source /usr/share/nvm/init-nvm.sh
 fi
 
 alias nmap-ssl="nmap --script ssl-enum-ciphers -p 443"
