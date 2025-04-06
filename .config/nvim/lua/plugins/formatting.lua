@@ -3,6 +3,8 @@ return {
     event = { "BufReadPre", "BufNewFile" },
     config = function()
         require("conform").setup({
+            async = true,
+            lsp_fallback = true,
             formatters = {
                 dprint = {
                     condition = function(ctx)
@@ -21,8 +23,9 @@ return {
             },
             format_on_save = {
                 -- These options will be passed to conform.format()
-                timeout_ms = 500,
-                lsp_format = "fallback",
+                timeout_ms = 2500,
+                lsp_fallback = true,
+                -- lsp_format = "fallback",
             },
         })
     end
