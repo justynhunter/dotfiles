@@ -57,12 +57,16 @@ vim.keymap.set("v", "<leader>y", "\"+y", { desc = "yank to system clipboard" })
 vim.keymap.set("n", "<leader>w", "<cmd>set wrap!<CR>", { desc = "toggle word wrap" })
 
 -- move around splits
-vim.keymap.set("n", "<leader>sh", ":split<Enter>", { desc = "split horizontal" })
-vim.keymap.set("n", "<leader>sv", ":vsplit<Enter>", { desc = "split vertical" })
-vim.keymap.set("n", "<leader>sr", "<C-w>r", { desc = "rotate up/left" })
-vim.keymap.set("n", "<leader>sr", "<C-w>R", { desc = "rotate down/right" })
-vim.keymap.set("n", "<leader>c", "<cmd>bp<bar>bd #<CR>", { desc = "move to down pane" })
-vim.keymap.set("n", "<leader>C", "<cmd>bd<CR>", { desc = "move to down pane" })
+-- vim.keymap.set("n", "<C-s>v", ":vsplit<Enter>", { desc = "split vertical" })
+-- vim.keymap.set("n", "<C-s>h", ":split<Enter>", { desc = "split horizontal" })
+-- vim.keymap.set("n", "<leader>sh", ":split<Enter>", { desc = "split horizontal" })
+-- vim.keymap.set("n", "<leader>sv", ":vsplit<Enter>", { desc = "split vertical" })
+-- vim.keymap.set("n", "<leader>sr", "<C-w>r", { desc = "rotate up/left" })
+-- vim.keymap.set("n", "<leader>sR", "<C-w>R", { desc = "rotate down/right" })
+vim.keymap.set("n", "<C-Up>", ":resize -2<CR>", { desc = "make window shorter" })
+vim.keymap.set("n", "<C-Down>", ":resize +2<CR>", { desc = "make window taller" })
+vim.keymap.set("n", "<C-Left>", ":vertical resize -2<CR>", { desc = "make window narrower" })
+vim.keymap.set("n", "<C-Right>", ":vertical resize +2<CR>", { desc = "resize pane smaller vertical" })
 
 -- Run Q Macro
 vim.keymap.set("n", "Q", "@q")
@@ -70,6 +74,7 @@ vim.keymap.set("n", "Q", "@q")
 -- buffers
 vim.keymap.set("n", "H", "<cmd>bp<CR>", { desc = "previous buffer" })
 vim.keymap.set("n", "L", "<cmd>bn<CR>", { desc = "next buffer" })
+vim.keymap.set("n", "X", "<cmd>bd<CR>", { desc = "close buffer" })
 
 -- make current file executeable
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true, desc = "make file executable" })
