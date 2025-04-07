@@ -34,6 +34,7 @@ return {
             }
 
             for server, config in pairs(servers) do
+                config.capabilities = require("blink.cmp").get_lsp_capabilities(config.capabilities)
                 lspconfig[server].setup(config)
             end
 
@@ -65,9 +66,8 @@ return {
                     vim.keymap.set("n", "<leader>ll", vim.lsp.codelens.run, bufmap("run codelens"))
                     vim.keymap.set("n", "<leader>lL", vim.lsp.codelens.refresh, bufmap("refresh and run codelens"))
 
-                    vim.keymap.set("n", "grs", vim.lsp.buf.signature_help, bufmap("signature help"))
-                    vim.keymap.set("n", "grD", vim.lsp.buf.declaration, bufmap("go to declaration"))
-                    vim.keymap.set("n", "gra", vim.lsp.buf.code_action, bufmap("code actions"))
+                    vim.keymap.set("n", "gs", vim.lsp.buf.signature_help, bufmap("signature help"))
+                    vim.keymap.set("n", "ga", vim.lsp.buf.code_action, bufmap("code actions"))
                     vim.keymap.set("n", "gl", vim.diagnostic.open_float, bufmap("show diagnostic in float"))
                     vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, bufmap("next diagnostic"))
                     vim.keymap.set("n", "]d", vim.diagnostic.goto_prev, bufmap("previous diagnostic"))
