@@ -63,9 +63,6 @@ return {
                     end
 
                     vim.keymap.set("n", "grn", vim.lsp.buf.rename, bufmap("rename symbol"))
-                    vim.keymap.set("n", "<leader>ll", vim.lsp.codelens.run, bufmap("run codelens"))
-                    vim.keymap.set("n", "<leader>lL", vim.lsp.codelens.refresh, bufmap("refresh and run codelens"))
-
                     vim.keymap.set("n", "gs", vim.lsp.buf.signature_help, bufmap("signature help"))
                     vim.keymap.set("n", "ga", vim.lsp.buf.code_action, bufmap("code actions"))
                     vim.keymap.set("n", "gl", vim.diagnostic.open_float, bufmap("show diagnostic in float"))
