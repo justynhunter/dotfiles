@@ -35,19 +35,6 @@ return {
             require("telescope").load_extension("ui-select")
             require("telescope").load_extension("media_files")
 
-            function vim.getVisualSelection()
-                vim.cmd('noau normal! "vy"')
-                local text = vim.fn.getreg('v')
-                vim.fn.setreg('v', {})
-
-                text = string.gsub(text, "\n", "")
-                if #text > 0 then
-                    return text
-                else
-                    return ''
-                end
-            end
-
             local builtin = require("telescope.builtin")
             local ext = require("telescope").extensions
             vim.keymap.set("n", "<leader> ", builtin.find_files, { desc = "find files" })
