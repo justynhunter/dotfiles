@@ -1,2 +1,3 @@
-require("justynhunter.set")
+require("justynhunter.functions")
 require("justynhunter.remap")
+require("justynhunter.set")
