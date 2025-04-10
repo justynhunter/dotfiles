@@ -3,7 +3,7 @@ export DOTNET_ROOT="/usr/local/share/dotnet"
 
 # n
 export N_PREFIX=~/.n
-export PATH="$PATH:$N_PREFIX/bin"
+export PATH="$N_PREFIX/bin:$PATH"
 
 eval "$(zoxide init zsh)"
 
