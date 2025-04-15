@@ -97,3 +97,6 @@ bindkey "^P" up-line-or-search
 bindkey "^N" down-line-or-search
 
 bindkey -v # vim key mode
+
+# ocaml
+eval $(opam env)
