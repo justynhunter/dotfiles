@@ -21,7 +21,8 @@
 										"bundle_identifiers": [
 											"net.kovidgoyal.kitty",
 											"com.mitchellh.ghostty",
-											"org.alacritty"
+											"org.alacritty",
+                                            "com.github.wez.wezterm"
 										]
 									}
 								]
@@ -44,7 +45,8 @@
 										"bundle_identifiers": [
 											"net.kovidgoyal.kitty",
 											"com.mitchellh.ghostty",
-											"org.alacritty"
+											"org.alacritty",
+                                            "com.github.wez.wezterm"
 										]
 									}
 								]
