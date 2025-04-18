@@ -15,6 +15,7 @@ return {
             },
             formatters_by_ft = {
                 astro = { "dprint" },
+                css = { "dprint" },
                 javascript = { "dprint" },
                 json = { "dprint" },
                 lua = { "stylua" },
