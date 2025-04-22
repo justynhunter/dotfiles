@@ -24,7 +24,7 @@ config.term = "xterm-256color"
 config.native_macos_fullscreen_mode = true
 config.color_scheme = 'catppuccin-frappe'
 
-config.font = wezterm.font("JetBrains Mono", { weight = 600 })
+config.font = wezterm.font("BlexMono Nerd Font Mono", { weight = 500 })
 config.font_size = 12
 
 config.enable_tab_bar = false
