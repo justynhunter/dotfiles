@@ -33,7 +33,6 @@ return {
                 marksman = {},
                 rust_analyzer = {},
                 ocamllsp = {},
-                omnisharp = { cmd = { "dotnet", "/Library/omnisharp/OmniSharp.dll" } },
             }
 
             local original_capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -41,6 +40,7 @@ return {
 
             -- lsps not in mason
             lspconfig.gleam.setup({})
+            lspconfig.omnisharp.setup({ cmd = { "dotnet", "/Library/omnisharp/OmniSharp.dll" } })
 
             -- setup deps
             require("mason").setup({})
