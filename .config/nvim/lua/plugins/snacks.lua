@@ -28,6 +28,7 @@ return {
         { "<leader>fr",      function() Snacks.picker.recent() end,                                       desc = "Find Recent" },
         { "<leader>fC",      function() Snacks.picker.commands() end,                                     desc = "Find Commands" },
         { "<leader>fm",      function() Snacks.picker.marks({ on_show = normal_mode }) end,               desc = "Find Marks" },
+        { "<leader>fw",      function() Snacks.picker.grep_word() end,                                    desc = "Find Visual Selection", mode = { "n", "x" } },
         { "gr",              function() Snacks.picker.lsp_references({ on_show = normal_mode }) end,      desc = "Find References" },
         { "gd",              function() Snacks.picker.lsp_definitions({ on_show = normal_mode }) end,     desc = "Find Definitions" },
         { "gD",              function() Snacks.picker.lsp_declarations({ on_show = normal_mode }) end,    desc = "Find Declarations" },
