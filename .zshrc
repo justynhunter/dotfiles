@@ -36,7 +36,9 @@ if [[ "$(uname -s)" == "Linux" ]]; then
     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
     # go bin
-    export PATH="$PATH:$(go env GOBIN):$(go env GOPATH)/bin"
+    if command -v go &> /dev/null; then
+        export PATH="$PATH:$(go env GOBIN):$(go env GOPATH)/bin"
+    fi
     export N_PREFIX=/home/jhunter/.n
     
     source $HOME/.oh-my-zsh/oh-my-zsh.sh
@@ -99,4 +101,6 @@ bindkey "^N" down-line-or-search
 bindkey -v # vim key mode
 
 # ocaml
-eval $(opam env)
+if command -v opam &> /dev/null; then
+    eval $(opam env)
+fi
