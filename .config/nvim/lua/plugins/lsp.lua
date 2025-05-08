@@ -29,10 +29,6 @@ return {
                 templ = {},
                 --other
                 lua_ls = {},
-                elixirls = { cmd = { "elixir-ls" } },
-                marksman = {},
-                rust_analyzer = {},
-                ocamllsp = {},
             }
 
             local original_capabilities = vim.lsp.protocol.make_client_capabilities()
