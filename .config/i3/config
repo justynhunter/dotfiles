@@ -72,8 +72,8 @@ floating_modifier $mod
 # tiling_drag modifier titlebar
 
 # screen brightness
-bindsym XF86MonBrightnessUp exec "xbacklight + 10"
-bindsym XF86MonBrightnessDown exec "xbacklight - 10"
+bindsym XF86MonBrightnessUp exec "brightnessctl set +10%"
+bindsym XF86MonBrightnessDown exec "brightnessctl set 10%-"
 
 # start a terminal
 bindsym $mod+Return exec --no-startup-id kitty
@@ -122,9 +122,9 @@ bindsym $mod+f fullscreen toggle
 bindsym $mod+Tab workspace back_and_forth
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+# bindsym $mod+w layout tabbed
+bindsym $mod+comma layout stacking
+bindsym $mod+slash layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
