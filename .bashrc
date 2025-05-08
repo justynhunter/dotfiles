@@ -29,5 +29,3 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
-source /usr/share/nvm/init-nvm.sh
-. "$HOME/.cargo/env"
