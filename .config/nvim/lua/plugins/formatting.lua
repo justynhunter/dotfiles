@@ -3,8 +3,6 @@ return {
     event = { "BufReadPre", "BufNewFile" },
     config = function()
         require("conform").setup({
-            async = true,
-            lsp_fallback = true,
             formatters = {
                 dprint = {
                     condition = function(ctx)
@@ -17,10 +15,12 @@ return {
                 astro = { "dprint" },
                 css = { "dprint" },
                 javascript = { "dprint" },
+                javascriptreact = { "dprint" },
                 json = { "dprint" },
                 lua = { "stylua" },
                 markdown = { "deno fmt" },
                 typescript = { "dprint" },
+                typescriptreact = { "dprint" },
             },
             format_on_save = {
                 -- These options will be passed to conform.format()
