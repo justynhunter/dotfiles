@@ -25,7 +25,7 @@ config.native_macos_fullscreen_mode = true
 config.color_scheme = 'catppuccin-frappe'
 
 config.font = wezterm.font("BlexMono Nerd Font Mono", { weight = 500 })
-config.font_size = 12
+config.font_size = 13
 
 config.enable_tab_bar = false
 config.window_decorations = "RESIZE"

@@ -7,11 +7,6 @@ export PATH="$N_PREFIX/bin:$PATH"
 
 eval "$(zoxide init zsh)"
 
-# fzf
-source <(fzf --zsh)
-export FZF_DEFAULT_OPTS='--tmux center --layout reverse'
-export FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix --exclude .git'
-
 # Mac settings
 if [[ "$(uname -s)" == "Darwin" ]]; then
     source $ZSH/oh-my-zsh.sh
@@ -98,9 +93,14 @@ esac
 bindkey "^P" up-line-or-search
 bindkey "^N" down-line-or-search
 
-bindkey -v # vim key mode
+# bindkey -v # vim key mode
 
 # ocaml
 if command -v opam &> /dev/null; then
     eval $(opam env)
 fi
+
+# fzf
+source <(fzf --zsh)
+export FZF_DEFAULT_OPTS='--tmux center --layout reverse'
+export FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix --exclude .git'
