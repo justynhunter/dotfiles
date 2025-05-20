@@ -24,9 +24,16 @@ return {
             },
             views = {
                 cmdline_popup = {
+                    border = {
+                        style = "none",
+                        padding = { 2, 3 },
+                    },
                     position = {
                         row = "40%",
                         col = "50%",
+                    },
+                    win_options = {
+                        winhighlight = "NormalFloat:NormalFloat:FloatBorder:FloatBorder",
                     },
                 },
             },
