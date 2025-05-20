@@ -10,6 +10,9 @@ return {
     opts = {
         animate = { enabled = true },
         bigfile = { enabled = true },
+        image = { enabled = true },
+        input = { enabled = true },
+        notifier = { enabled = true },
         picker = { enabled = true },
         quickfile = {
             enabled = true,
@@ -22,7 +25,7 @@ return {
         { "<leader>fb",      function() Snacks.picker.buffers({ on_show = normal_mode }) end,             desc = "Find Buffers" },
         { "<M-b>",           function() Snacks.picker.buffers({ on_show = normal_mode }) end,             desc = "Find Buffers" },
         { "<leader>ff",      function() Snacks.picker.grep() end,                                         desc = "Find Grep" },
-        { "<leader>fc",      function() Snacks.picker.command_history() end,                              desc = "Find Command History" },
+        { "<leader>f:",      function() Snacks.picker.command_history() end,                              desc = "Find Command History" },
         { "<leader>fk",      function() Snacks.picker.keymaps() end,                                      desc = "Find keymaps" },
         { "<leader>fn",      function() Snacks.picker.notifications() end,                                desc = "Find Notifications" },
         { "<leader>fr",      function() Snacks.picker.recent() end,                                       desc = "Find Recent" },
