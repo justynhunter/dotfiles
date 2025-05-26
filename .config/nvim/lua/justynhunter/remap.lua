@@ -80,4 +80,4 @@ vim.keymap.set("n", "X", "<cmd>bd<CR>", { desc = "close buffer" })
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true, desc = "make file executable" })
 
 -- console.log selection
-vim.keymap.set("v", "<leader>l", "yoconsole.log(\"pa:\", pa);", { desc = "console.log visual selection" });
+vim.keymap.set("v", "<leader>l", "yoconsole.log(\"pa:\", pa);", { desc = "console.log visual selection" })
