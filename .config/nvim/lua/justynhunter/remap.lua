@@ -81,3 +81,7 @@ vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true, desc =
 
 -- console.log selection
 vim.keymap.set("v", "<leader>l", "yoconsole.log(\"pa:\", pa);", { desc = "console.log visual selection" })
+
+-- add character to end of line
+vim.keymap.set("n", "<leader>,", "mzA,<Esc>`z", { desc = "add comma to end of line" })
+vim.keymap.set("n", "<leader>;", "mzA;<Esc>`z", { desc = "add semicolon to end of line" })
