@@ -1,9 +1,12 @@
 copy-on-select = true
 cursor-click-to-move = true
 
-font-family = "Hack Mono"
+font-family = "BlexMono Nerd Fonrt Mono"
 font-thicken = true
-font-size = 12
+font-size = 13
+font-feature = -calt
+font-feature = -liga
+font-feature = -dlig
 
 mouse-hide-while-typing = true
 
@@ -16,3 +19,5 @@ window-decoration = false
 
 window-padding-x = 5
 window-padding-y = 5
+
+keybind = global:alt+space=toggle_quick_terminal
