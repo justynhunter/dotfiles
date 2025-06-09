@@ -4,9 +4,6 @@ vim.g.mapleader = " "
 -- vim.keymap.set("n", "<leader>e", vim.cmd.Ex)
 vim.keymap.set("n", "<leader>e", "<cmd>Oil<CR>")
 
--- add blank line
-vim.keymap.set("n", "<C-CR>", "mzo<ESC>k`z", { desc = "add blank line below" })
-
 -- search
 vim.keymap.set("n", "<leader>/", "<cmd>nohlsearch<CR>", { desc = "clear search" })
 
@@ -32,9 +29,7 @@ vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "move line down" })
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "move line up" })
 
 -- keep cursor position on `*`
-vim.keymap.set("n", "*", ":keepjumps normal! mi*`i<CR>")
-
--- remove whitespace below
+vim.keymap.set("n", "*", ":keepjumps normal! mi*`i<CR>") -- remove whitespace below
 vim.keymap.set("n", "J", "mzJ`z", { desc = "keep cursor location on join" })
 
 -- add whitespace
