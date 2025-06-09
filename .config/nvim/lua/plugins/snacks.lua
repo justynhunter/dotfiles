@@ -10,7 +10,8 @@ return {
     opts = {
         animate = { enabled = true },
         bigfile = { enabled = true },
-        image = { enabled = true },
+        image = { enabled = false },
+        indent = { enabled = true, },
         input = { enabled = true },
         notifier = { enabled = true },
         picker = { enabled = true },
