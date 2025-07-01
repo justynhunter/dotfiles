@@ -11,8 +11,5 @@ return {
         vim.keymap.set("n", "<Leader>3", function() ui.nav_file(3) end)
         vim.keymap.set("n", "<Leader>4", function() ui.nav_file(4) end)
         vim.keymap.set("n", "<Leader>5", function() ui.nav_file(4) end)
-
-        vim.keymap.set("n", "<Tab>", function() ui.nav_next() end)
-        vim.keymap.set("n", "<S-Tab>", function() ui.nav_prev() end)
     end
 }
