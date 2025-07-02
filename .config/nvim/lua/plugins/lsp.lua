@@ -15,7 +15,20 @@ return {
                 astro = {},
                 -- formatters
                 dprint = {},
-                stylelint_lsp = {},
+                stylelint_lsp = {
+                    filetypes = { 'css', 'scss' },
+                    root_dir = require('lspconfig').util.root_pattern('package.json', '.git'),
+                    settings = {
+                        stylelintplus = {
+                            -- see available options in stylelint-lsp documentation
+                            autoFixOnFormat = true,
+                            autoFixOnSave = true,
+                        },
+                    },
+                    on_attach = function(client)
+                        client.server_capabilities.document_formatting = true
+                    end,
+                },
                 -- css
                 cssls = {},
                 cssmodules_ls = {},
