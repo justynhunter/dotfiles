@@ -40,6 +40,8 @@ if [[ "$(uname -s)" == "Linux" ]]; then
 
     eval "$(oh-my-posh init zsh --config $(brew --prefix oh-my-posh)/themes/pure.omp.json)"
 
+    export PATH="$PATH:/home/jhunter/.npm/global/bin"
+
     # pnpm
     export PNPM_HOME="/home/jhunter/.local/share/pnpm"
     case ":$PATH:" in
