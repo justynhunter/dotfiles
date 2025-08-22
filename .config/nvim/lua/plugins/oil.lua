@@ -17,6 +17,10 @@ return {
 
         require("oil").setup({
             default_file_explorer = true,
+            keymaps = {
+                ["<C-s>"] = { "actions.select", opts = { horizontal = true } },
+                ["<C-v>"] = { "actions.select", opts = { vertical = true } },
+            },
             view_options = {
                 show_hidden = true,
             },
