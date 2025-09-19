@@ -32,7 +32,7 @@ return {
                 -- css
                 cssls = {},
                 cssmodules_ls = {},
-                css_variables = {},
+                -- css_variables = {},
                 -- docker
                 dockerls = {},
                 docker_compose_language_service = {},
