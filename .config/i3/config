@@ -45,9 +45,9 @@ exec_always --no-startup-id setxkbmap -option ctrl:nocaps && xcape -e 'Control_L
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-# exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -n -c 282522
-exec_always --no-startup-id xset +dpms dpms 0 300 300
-exec_always --no-startup-id xss-lock --transfer-sleep-lock -- ~/dotfiles/lock.sh
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -n -c 282522
+# exec_always --no-startup-id xset +dpms dpms 0 300 300
+# exec_always --no-startup-id xss-lock --transfer-sleep-lock -- ~/dotfiles/lock.sh
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
