@@ -92,7 +92,7 @@ bindsym $mod+d exec --no-startup-id dmenu_run
 bindsym $mod+b exec firefox
 bindsym $mod+m exec thunderbird
 bindsym $mod+t exec thunar
-# bindsym $mod+l exec i3lock --ignore-empty-password -c 282522 -n
+bindsym $mod+o exec i3lock --ignore-empty-password -c 282522 -n
 
 # rofi
 bindsym $alt+space exec rofi -show combi
