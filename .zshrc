@@ -107,3 +107,4 @@ fi
 source <(fzf --zsh)
 export FZF_DEFAULT_OPTS='--tmux center --layout reverse'
 export FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix --exclude .git'
+eval "$(/home/jhunter/.local/bin/mise activate zsh)"
