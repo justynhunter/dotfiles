@@ -13,9 +13,9 @@ mouse-hide-while-typing = true
 shell-integration = zsh
 
 # theme = melange
-theme = catppuccin-frappe
+theme = Catppuccin Frappe
 
-window-decoration = false
+# window-decoration = false
 
 window-padding-x = 5
 window-padding-y = 5
