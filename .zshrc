@@ -5,8 +5,6 @@ export DOTNET_ROOT="/usr/local/share/dotnet"
 export N_PREFIX=~/.n
 export PATH="$N_PREFIX/bin:$PATH"
 
-eval "$(zoxide init zsh)"
-
 # Mac settings
 if [[ "$(uname -s)" == "Darwin" ]]; then
     source $ZSH/oh-my-zsh.sh
@@ -106,5 +104,9 @@ fi
 # fzf
 source <(fzf --zsh)
 export FZF_DEFAULT_OPTS='--tmux center --layout reverse'
+export _ZO_FZF_OPTS=$FZF_DEFAULT_OPTS
 export FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix --exclude .git'
 eval "$(/home/jhunter/.local/bin/mise activate zsh)"
+eval "$(/Users/justynhunter/.local/bin/mise activate zsh)"
+
+eval "$(zoxide init zsh)"
