@@ -80,3 +80,9 @@ vim.keymap.set("v", "<leader>l", "yoconsole.log(\"pa:\", pa);", { desc = "con
 -- add character to end of line
 vim.keymap.set("n", "<leader>,", "mzA,<Esc>`z", { desc = "add comma to end of line" })
 vim.keymap.set("n", "<leader>;", "mzA;<Esc>`z", { desc = "add semicolon to end of line" })
+
+-- tabs
+vim.keymap.set("n", "<leader>tn", "<cmd>tabnew<CR>", { desc = "make new tab" })
+vim.keymap.set("n", "<leader>tx", "<cmd>tabclose<CR>", { desc = "make new tab" })
+vim.keymap.set("n", "<C-.>", "<cmd>tabnext<CR>", { desc = "next tab" })
+vim.keymap.set("n", "<C-,>", "<cmd>tabprev<CR>", { desc = "previous tab" })
