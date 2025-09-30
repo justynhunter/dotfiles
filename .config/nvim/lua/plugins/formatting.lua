@@ -19,6 +19,7 @@ return {
                 json = { "dprint" },
                 lua = { "stylua" },
                 markdown = { "deno fmt" },
+                toml = { "taplo" },
                 typescript = { "dprint" },
                 typescriptreact = { "dprint" },
             },
