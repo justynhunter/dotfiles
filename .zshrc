@@ -4,6 +4,7 @@ export DOTNET_ROOT="/usr/local/share/dotnet"
 # n
 export N_PREFIX=~/.n
 export PATH="$N_PREFIX/bin:$PATH"
+export PATH="$PATH:~/.config/tmux/bin"
 
 # Mac settings
 if [[ "$(uname -s)" == "Darwin" ]]; then
@@ -106,7 +107,7 @@ source <(fzf --zsh)
 export FZF_DEFAULT_OPTS='--tmux center --layout reverse'
 export _ZO_FZF_OPTS=$FZF_DEFAULT_OPTS
 export FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix --exclude .git'
-eval "$(/home/jhunter/.local/bin/mise activate zsh)"
-eval "$(/Users/justynhunter/.local/bin/mise activate zsh)"
+# eval "$(/home/jhunter/.local/bin/mise activate zsh)"
+# eval "$(/Users/justynhunter/.local/bin/mise activate zsh)"
 
 eval "$(zoxide init zsh)"
