@@ -82,6 +82,11 @@ outer.right =      0
 # You can uncomment this line to open up terminal with alt + enter shortcut
 # See: https://nikitabobko.github.io/AeroSpace/commands#exec-and-forget
 # alt-enter = 'exec-and-forget open -n /System/Applications/Utilities/Terminal.app'
+# alt-enter = 'exec-and-forget open --new -a ~/Applications/kitty.app'
+alt-enter = 'exec-and-forget open -n /Applications/kitty.app'
+alt-b = 'exec-and-forget open -n /Applications/Brave\ Browser.app'
+alt-m = "exec-and-forget open /Applications/Spotify.app"
+
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#layout
 alt-slash = 'layout tiles horizontal vertical'
@@ -140,6 +145,18 @@ alt-shift-semicolon = 'mode service'
 
 [workspace-to-monitor-force-assignment]
 1 = 'secondary'
+
+[[on-window-detected]]
+if.app-name-regex-substring = "finder"
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-name-regex-substring = "1password"
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-name-regex-substring = "spotify"
+run = 'layout floating'
 
 # 'service' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
