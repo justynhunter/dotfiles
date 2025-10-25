@@ -4,6 +4,9 @@ vim.g.mapleader = " "
 -- vim.keymap.set("n", "<leader>e", vim.cmd.Ex)
 vim.keymap.set("n", "<leader>e", "<cmd>Oil<CR>")
 
+-- disable q:
+vim.keymap.set("n", "q:", "<Nop>", { desc = "Disable q:" })
+
 -- search
 vim.keymap.set("n", "<leader>/", "<cmd>nohlsearch<CR>", { desc = "clear search" })
 
