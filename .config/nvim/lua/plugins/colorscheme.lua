@@ -14,7 +14,7 @@ return {
     config = function()
         require("catppuccin").setup({
             -- flavour = "latte"
-            flavour = "frappe",
+            -- flavour = "frappe",
             integrations = {
                 cmp = true,
                 flash = true,
