@@ -103,11 +103,11 @@ if command -v opam &> /dev/null; then
 fi
 
 # fzf
-source <(fzf --zsh)
-export FZF_DEFAULT_OPTS='--tmux center --layout reverse'
+export FZF_DEFAULT_OPTS='--tmux center --layout reverse --preview "bat --color=always --style=numbers --line-range=:500 {}"'
 export _ZO_FZF_OPTS=$FZF_DEFAULT_OPTS
 export FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix --exclude .git'
-# eval "$(/home/jhunter/.local/bin/mise activate zsh)"
-# eval "$(/Users/justynhunter/.local/bin/mise activate zsh)"
 
+# zsh connections
 eval "$(zoxide init zsh)"
+source <(fzf --zsh)
+
