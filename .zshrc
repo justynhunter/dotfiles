@@ -27,18 +27,13 @@ fi
 
 # Linux settings
 if [[ "$(uname -s)" == "Linux" ]]; then
-    # brew
-    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-
     # go bin
     if command -v go &> /dev/null; then
         export PATH="$PATH:$(go env GOBIN):$(go env GOPATH)/bin"
     fi
     export N_PREFIX=/home/jhunter/.n
     
-    source $HOME/.oh-my-zsh/oh-my-zsh.sh
-
-    eval "$(oh-my-posh init zsh --config $(brew --prefix oh-my-posh)/themes/pure.omp.json)"
+    eval "$(oh-my-posh init zsh --config /usr/share/oh-my-posh/themes/pure.omp.json)"
 
     export PATH="$PATH:/home/jhunter/.npm/global/bin"
 
