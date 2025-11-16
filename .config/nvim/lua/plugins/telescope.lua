@@ -52,6 +52,7 @@ return {
 			vim.keymap.set("n", "<leader>fm", builtin.marks, { desc = "search marks" })
 			vim.keymap.set("n", "<leader>fr", builtin.registers, { desc = "search registers" })
 			vim.keymap.set("n", "<leader>fs", builtin.spell_suggest, { desc = "spelling suggestions" })
+			vim.keymap.set("n", "<leader>ft", builtin.builtin, { desc = "search and use builtins" })
 			vim.keymap.set("n", "<leader>fds", builtin.lsp_document_symbols, { desc = "search document symbols" })
 			vim.keymap.set("n", "<leader>fws", builtin.lsp_workspace_symbols, { desc = "search workspace symbols" })
 			vim.keymap.set("n", "<leader>fi", ext.media_files.media_files)
