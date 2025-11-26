@@ -13,7 +13,7 @@ mouse-hide-while-typing = true
 shell-integration = zsh
 
 # theme = melange
-theme = Catppuccin Frappe
+theme = Catppuccin Mocha
 
 # window-decoration = false
 
