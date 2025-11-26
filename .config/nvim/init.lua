@@ -16,4 +16,8 @@ vim.diagnostic.config({
 })
 
 require("justynhunter")
-require("lazy").setup("plugins")
+require("lazy").setup({
+    spec = {
+        { import = "plugins" }
+    }
+})
